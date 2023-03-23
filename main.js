@@ -81,16 +81,6 @@ function changeDropdown(val1, val2) {
         d = 1;
     }
 }
-// document.addEventListener('keydown', function (event) 
-// {  var key = event.key;
-//      if (!isNaN(key) || key === '+' || key === '-' || key === '*' || key === '/' || key === '.')
-//  { input.value += key; } 
-//  else if 
-//  (key === "Backspace" || key === "Delete") { let len = input.value.length; input.value = input.value.slice(0, Number(len) - 1); } 
-//  else if 
-//  (key === 'Enter') { equal(input.value); 
-// } 
-// });
 function ElementValue(value) {
     switch (value) {
         case 'C': {
@@ -258,17 +248,17 @@ function ElementValue(value) {
             }
             break;
         }
-        // case 'deg': {
-        //     if (i == 1) {
-        //         document.getElementById('degree').innerHTML = "RAD";
-        //         i = 0;
-        //     }
-        //     else {
-        //         document.getElementById('degree').innerHTML = "DEG";
-        //         i = 1;
-        //     }
-        //     break;
-        // }
+        case 'deg': {
+            if (i == 1) {
+                document.querySelector('degree').innerHTML = "RAD";
+                i = 0;
+            }
+            else {
+                document.querySelector('degree').innerHTML = "DEG";
+                i = 1;
+            }
+            break;
+        }
         case 'fe': {
             if (w == 1) {
                 input.value = Number(input.value).toString();
@@ -283,148 +273,186 @@ function ElementValue(value) {
         default: {
             input.value += 0;
         }
-        // case 'sin': {
-        //     if (i == 1) {
-        //         input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = (Math.sin(Number(input.value))).toString();
-        //     }
-        //     break;
-        // } case 'cos': {
-        //     if (i) {
-        //         input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = (Math.sin(Number(input.value))).toString();
-        //     }
-        //     break;
-        // } case 'tan': {
-        //     if (i) {
-        //         input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = (Math.sin(Number(input.value))).toString();
-        //     }
-        //     break;
-        // } case 'cosec': {
-        //     if (i) {
-        //         input.value = (1 / Math.sin(Math.PI / 180 * Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = (1 / Math.sin(Number(input.value))).toString();
-        //     }
-        //     break;
-        // } case 'sec': {
-        //     if (i) {
-        //         input.value = (1 / Math.cos(Math.PI / 180 * Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = (1 / Math.cos(Number(input.value))).toString();
-        //     }
-        //     break;
-        // } case 'cot': {
-        //     if (i) {
-        //         input.value = (1 / (Math.tan(Math.PI / 180 * Number(input.value)))).toString();
-        //     }
-        //     else {
-        //         input.value = (1 / Math.tan(Number(input.value))).toString();
-        //     }
-        //     break;
-        // }
-        // case 'sin_inverse': {
-        //     if (i) {
-        //         input.value = (180 / Math.PI * Math.asin(Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = Math.asin(Number(input.value)).toString();
-        //     }
-        //     break;
-        // } case 'cos _inverse': {
-        //     if (i) {
-        //         input.value = (180 / Math.PI * Math.acos(Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = Math.acos(Number(input.value)).toString();
-        //     }
-        //     break;
-        // } case 'tan_inverse': {
-        //     if (i) {
-        //         input.value = (180 / Math.PI * Math.atan(Number(input.value))).toString();
-        //     }
-        //     else {
-        //         input.value = Math.atan(Number(input.value)).toString();
-        //     }
-        //     break;
-        // } case 'cosec_inverse': {
-        //     if (i) {
-        //         input.value = (180 / Math.PI * (Math.asin(1 /Number( input.value)))).toString();
-        //     }
-        //     else {
-        //         input.value = (1 / Math.asin(Number(input.value))).toString();
-        //     }
-        //     break;
-        // } case 'sec_inverse': {
-        //     if (i) {
-        //         input.value = (180 / Math.PI * (Math.acos(1 /Number( input.value)))).toString();
-        //     }
-        //     else {
-        //         input.value = (1 / Math.acos(Number(input.value))).toString();
-        //     }
-        //     break;
-        // } case 'cot_inverse': {
-        //     if (i) {
-        //         input.value = (180 / Math.PI * (Math.atan(1 /Number(input.value)))).toString();
-        //     }
-        //     else {
-        //         input.value = (1 / Math.atan(Number(input.value))).toString();
-        //     }
-        //     break;
-        // }
-        // case 'sinh': {
-        //     input.value = Math.sinh(Number(input.value)).toString();
-        //     break;
-        // } case 'cosh': {
-        //     input.value = Math.cosh(Number(input.value)).toString();
-        //     break;
-        // } case 'tanh': {
-        //     input.value = Math.tanh(Number(input.value)).toString();
-        //     break;
-        // } case 'cosech': {
-        //     input.value = (1 / Math.sinh(Number(input.value))).toString();
-        //     break;
-        // } case 'sech': {
-        //     input.value = (1 / Math.cosh(Number(input.value))).toString();;
-        //     break;
-        // } case 'coth': {
-        //     input.value = (1 / Math.tanh(Number(input.value))).toString();;
-        //     break;
-        // }
-        // case 'sinh_inverse': {
-        //     input.value = Math.asinh(Number(input.value)).toString();
-        //     break;
-        // } case 'cosh_inverse': {
-        //     input.value = Math.acosh(Number(input.value)).toString();
-        //     break;
-        // } case 'tanh_inverse': {
-        //     input.value = Math.atanh(Number(input.value)).toString();
-        //     break;
-        // } case 'cosech_inverse': {
-        //     input.value = (1 / Math.asinh(Number(input.value))).toString();
-        //     break;
-        // } case 'sech_inverse': {
-        //     input.value = (1 / Math.acosh(Number(input.value))).toString();
-        //      break;
-        // } case 'coth_inverse': {
-        //     input.value = (1 / Math.atanh(Number(input.value))).toString();
-        //     break;
-        // }
+        case 'sin': {
+            if (i == 1) {
+                input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
+            }
+            else {
+                input.value = (Math.sin(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'cos': {
+            if (i) {
+                input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
+            }
+            else {
+                input.value = (Math.sin(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'tan': {
+            if (i) {
+                input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
+            }
+            else {
+                input.value = (Math.sin(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'cosec': {
+            if (i) {
+                input.value = (1 / Math.sin(Math.PI / 180 * Number(input.value))).toString();
+            }
+            else {
+                input.value = (1 / Math.sin(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'sec': {
+            if (i) {
+                input.value = (1 / Math.cos(Math.PI / 180 * Number(input.value))).toString();
+            }
+            else {
+                input.value = (1 / Math.cos(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'cot': {
+            if (i) {
+                input.value = (1 / (Math.tan(Math.PI / 180 * Number(input.value)))).toString();
+            }
+            else {
+                input.value = (1 / Math.tan(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'sin_inverse': {
+            if (i) {
+                input.value = (180 / Math.PI * Math.asin(Number(input.value))).toString();
+            }
+            else {
+                input.value = Math.asin(Number(input.value)).toString();
+            }
+            break;
+        }
+        case 'cos _inverse': {
+            if (i) {
+                input.value = (180 / Math.PI * Math.acos(Number(input.value))).toString();
+            }
+            else {
+                input.value = Math.acos(Number(input.value)).toString();
+            }
+            break;
+        }
+        case 'tan_inverse': {
+            if (i) {
+                input.value = (180 / Math.PI * Math.atan(Number(input.value))).toString();
+            }
+            else {
+                input.value = Math.atan(Number(input.value)).toString();
+            }
+            break;
+        }
+        case 'cosec_inverse': {
+            if (i) {
+                input.value = (180 / Math.PI * (Math.asin(1 / Number(input.value)))).toString();
+            }
+            else {
+                input.value = (1 / Math.asin(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'sec_inverse': {
+            if (i) {
+                input.value = (180 / Math.PI * (Math.acos(1 / Number(input.value)))).toString();
+            }
+            else {
+                input.value = (1 / Math.acos(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'cot_inverse': {
+            if (i) {
+                input.value = (180 / Math.PI * (Math.atan(1 / Number(input.value)))).toString();
+            }
+            else {
+                input.value = (1 / Math.atan(Number(input.value))).toString();
+            }
+            break;
+        }
+        case 'sinh': {
+            var result = ((Math.exp(Number(input.value)) - Math.exp(Number(-input.value))) / 2).toString();
+            input.value = result;
+            break;
+        }
+        case 'cosh': {
+            var result = ((Math.exp(Number(input.value)) + Math.exp(Number(-input.value))) / 2).toString();
+            input.value = result;
+            break;
+        }
+        case 'tanh': {
+            var result = (((Math.exp(Number(input.value)) - Math.exp(Number(-input.value))) / (Math.exp(Number(input.value)) + Math.exp(Number(-input.value)))) * ((Math.exp(Number(input.value)) - Math.exp(Number(-input.value))) / 2)).toString();
+            input.value = result;
+            break;
+        }
+        case 'cosech': {
+            var result = (2 / (Math.exp(Number(input.value)) - Math.exp(Number(-input.value)))).toString();
+            input.value = result;
+            break;
+        }
+        case 'sech': {
+            var result = (2 / (Math.exp(Number(input.value)) + Math.exp(Number(-input.value)))).toString();
+            input.value = result;
+            break;
+        }
+        case 'coth': {
+            var result = ((Math.exp(Number(input.value)) + Math.exp(Number(-input.value))) / (Math.exp(Number(input.value)) - Math.exp(Number(-input.value)))).toString();
+            input.value = result;
+            break;
+        }
+        case 'sinh_inverse': {
+            var result = (Math.log(Number(input.value) + Math.sqrt(Math.pow(Number(input.value), 2) + 1))).toString();
+            input.value = result;
+            break;
+        }
+        case 'cosh_inverse': {
+            var result = (Math.log(Number(input.value) + Math.sqrt(Math.pow(Number(input.value), 2) - 1))).toString();
+            input.value = result;
+            break;
+        }
+        case 'tanh_inverse': {
+            var result = (0.5 * Math.log((1 + Number(input.value)) / (1 - Number(input.value)))).toString();
+            input.value = result;
+            break;
+        }
+        case 'cosech_inverse': {
+            var result = (Math.log(1 / Number(input.value) + Math.sqrt(1 / Math.pow(Number(input.value), 2) + 1))).toString();
+            input.value = result;
+            break;
+        }
+        case 'sech_inverse': {
+            var result = (Math.log(1 / Number(input.value) + Math.sqrt(1 / Math.pow(Number(input.value), 2) - 1))).toString();
+            input.value = result;
+            break;
+        }
+        case 'coth_inverse': {
+            var result = (0.5 * Math.log((Number(input.value) + 1) / (Number(input.value) - 1))).toString();
+            input.value = result;
+            break;
+        }
     }
 }
-// document.addEventListener('keydown', function (event) 
-// {  var key = event.key; if (!isNaN(key) || key === '+' || key === '-' || key === '*' || key === '/' || key === '.')
-//  { input.value += key; } 
-//  else if 
-//  (key === "Backspace" || key === "Delete") { let len = input.value.length; input.value = input.value.slice(0, Number(len) - 1); } 
-//  else if 
-//  (key === 'Enter') { equal(input.value); } });
+document.addEventListener('keydown', function (event) {
+    var key = event.key;
+    if (!isNaN(Number(key)) || key === '+' || key === '-' || key === '*' || key === '/' || key === '.') {
+        input.value += key;
+    }
+    else if (key === "Backspace" || key === "Delete") {
+        var len = input.value.length;
+        input.value = input.value.slice(0, Number(len) - 1);
+    }
+    else if (key === 'Enter') {
+        equalElement();
+    }
+});
