@@ -1,29 +1,17 @@
-var a = 1;
-var b = 1;
-var c = 1;
-var d = 1;
-var e = 1;
-var x = 1;
-var y;
-var z = 1;
-var w = 1;
-var i = 1;
-var m = 1;
-var n = 1;
-var o = 1;
-var memory_stack = [];
+var dropdownToggleValue = 1;
+var logbaseChange;
+var ToggleValue = 1;
+var memoryStack = [];
 var input = document.querySelector('input');
-function inputElement() {
-    input.value = " ";
-}
+function inputElement() { input.value = " "; }
 function equalElement() {
     if (input.value.indexOf("yroot") !== -1) {
-        var y_1 = yroot(input.value);
-        ythrroot(Number(y_1[0]), Number(y_1[1]));
+        var logbaseChange_1 = yroot(input.value);
+        ythrroot(Number(logbaseChange_1[0]), Number(logbaseChange_1[1]));
     }
     if ((input.value.indexOf("logy") !== -1)) {
-        var y_2 = logy(input.value);
-        logx_base_y(Number(y_2[0]), Number(y_2[1]));
+        var logbaseChange_2 = logy(input.value);
+        logx_base_y(Number(logbaseChange_2[0]), Number(logbaseChange_2[1]));
     }
     try {
         input.value = eval(input.value);
@@ -58,27 +46,27 @@ function cr() {
     document.getElementById('recall').disabled = false;
 }
 function changeDropdown(val1, val2) {
-    if (d == 1) {
+    if (dropdownToggleValue == 1) {
         for (var _i = 0, _a = document.getElementsByClassName(val1); _i < _a.length; _i++) {
-            var x_1 = _a[_i];
-            x_1.style.display = "inline-block";
+            var displayToggle = _a[_i];
+            displayToggle.style.display = "inline-block";
         }
         for (var _b = 0, _c = document.getElementsByClassName(val2); _b < _c.length; _b++) {
-            var x_2 = _c[_b];
-            x_2.style.display = "none";
+            var displayToggle = _c[_b];
+            displayToggle.style.display = "none";
         }
-        d = 0;
+        dropdownToggleValue = 0;
     }
     else {
         for (var _d = 0, _e = document.getElementsByClassName(val2); _d < _e.length; _d++) {
-            var x_3 = _e[_d];
-            x_3.style.display = "inline-block";
+            var displayToggle = _e[_d];
+            displayToggle.style.display = "inline-block";
         }
         for (var _f = 0, _g = document.getElementsByClassName(val1); _f < _g.length; _f++) {
-            var x_4 = _g[_f];
-            x_4.style.display = "none";
+            var displayToggle = _g[_f];
+            displayToggle.style.display = "none";
         }
-        d = 1;
+        dropdownToggleValue = 1;
     }
 }
 function ElementValue(value) {
@@ -112,10 +100,10 @@ function ElementValue(value) {
             break;
         }
         case 'ylog': {
-            var z_1 = value.search("yroot");
-            var y_3 = value.substring(0, z_1);
-            var x_5 = value.substring(z_1 + 5, value.length);
-            return [x_5, y_3];
+            var z = value.search("yroot");
+            var y = value.substring(0, z);
+            var x = value.substring(z + 5, value.length);
+            return [x, y];
             break;
         }
         case 'lnx': {
@@ -148,8 +136,8 @@ function ElementValue(value) {
                 input.value = "1";
             }
             else if (number > 1) {
-                for (var i_1 = number - 1; i_1 > 1; i_1--) {
-                    number = number * i_1;
+                for (var i = number - 1; i > 1; i--) {
+                    number = number * i;
                 }
                 input.value = number.toString();
             }
@@ -180,41 +168,41 @@ function ElementValue(value) {
             break;
         }
         case 'memory_clear': {
-            memory_stack = [];
+            memoryStack = [];
             break;
         }
         case 'memory_recall': {
-            input.value = memory_stack[memory_stack.length - 1].toString();
+            input.value = memoryStack[memoryStack.length - 1].toString();
             break;
         }
         case 'memory_add': {
             cr();
-            if (memory_stack.length == 1) {
-                memory_stack.push(parseInt(input.value));
+            if (memoryStack.length == 1) {
+                memoryStack.push(parseInt(input.value));
             }
             else {
-                memory_stack[memory_stack.length - 1] += parseInt(input.value);
+                memoryStack[memoryStack.length - 1] += parseInt(input.value);
             }
             break;
         }
         case 'memory_sub': {
             cr();
-            if (memory_stack.length == 0) {
-                memory_stack.push((-1) * parseInt(input.value));
+            if (memoryStack.length == 0) {
+                memoryStack.push((-1) * parseInt(input.value));
             }
             else {
-                memory_stack[memory_stack.length - 1] -= parseInt(input.value);
+                memoryStack[memoryStack.length - 1] -= parseInt(input.value);
             }
             break;
         }
         case 'memory_store': {
             cr();
-            if (memory_stack.length == 0) {
-                memory_stack.push(parseFloat(input.value));
+            if (memoryStack.length == 0) {
+                memoryStack.push(parseFloat(input.value));
             }
             else {
                 console.log("add");
-                memory_stack.push(parseFloat(input.value));
+                memoryStack.push(parseFloat(input.value));
             }
             break;
         }
@@ -249,24 +237,24 @@ function ElementValue(value) {
             break;
         }
         case 'deg': {
-            if (i == 1) {
+            if (ToggleValue == 1) {
                 document.querySelector('degree').innerHTML = "RAD";
-                i = 0;
+                ToggleValue = 0;
             }
             else {
                 document.querySelector('degree').innerHTML = "DEG";
-                i = 1;
+                ToggleValue = 1;
             }
             break;
         }
         case 'fe': {
-            if (w == 1) {
+            if (ToggleValue == 1) {
                 input.value = Number(input.value).toString();
-                w = 0;
+                ToggleValue = 0;
             }
             else {
                 input.value = Number(input.value).toExponential().toString();
-                w = 1;
+                ToggleValue = 1;
             }
             break;
         }
@@ -274,7 +262,7 @@ function ElementValue(value) {
             input.value += 0;
         }
         case 'sin': {
-            if (i == 1) {
+            if (ToggleValue == 1) {
                 input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
             }
             else {
@@ -283,7 +271,7 @@ function ElementValue(value) {
             break;
         }
         case 'cos': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
             }
             else {
@@ -292,7 +280,7 @@ function ElementValue(value) {
             break;
         }
         case 'tan': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
             }
             else {
@@ -301,7 +289,7 @@ function ElementValue(value) {
             break;
         }
         case 'cosec': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (1 / Math.sin(Math.PI / 180 * Number(input.value))).toString();
             }
             else {
@@ -310,7 +298,7 @@ function ElementValue(value) {
             break;
         }
         case 'sec': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (1 / Math.cos(Math.PI / 180 * Number(input.value))).toString();
             }
             else {
@@ -319,7 +307,7 @@ function ElementValue(value) {
             break;
         }
         case 'cot': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (1 / (Math.tan(Math.PI / 180 * Number(input.value)))).toString();
             }
             else {
@@ -328,7 +316,7 @@ function ElementValue(value) {
             break;
         }
         case 'sin_inverse': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.asin(Number(input.value))).toString();
             }
             else {
@@ -337,7 +325,7 @@ function ElementValue(value) {
             break;
         }
         case 'cos _inverse': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.acos(Number(input.value))).toString();
             }
             else {
@@ -346,7 +334,7 @@ function ElementValue(value) {
             break;
         }
         case 'tan_inverse': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.atan(Number(input.value))).toString();
             }
             else {
@@ -355,7 +343,7 @@ function ElementValue(value) {
             break;
         }
         case 'cosec_inverse': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.asin(1 / Number(input.value)))).toString();
             }
             else {
@@ -364,7 +352,7 @@ function ElementValue(value) {
             break;
         }
         case 'sec_inverse': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.acos(1 / Number(input.value)))).toString();
             }
             else {
@@ -373,7 +361,7 @@ function ElementValue(value) {
             break;
         }
         case 'cot_inverse': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.atan(1 / Number(input.value)))).toString();
             }
             else {

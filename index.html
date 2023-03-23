@@ -38,13 +38,13 @@
             <div class="row">
                 <div class="calc_bottom ">
 
-                    <button class="bold_digit" onclick="ElementValue(value)" value="memory_clear" id="clear"
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryClear" id="clear"
                         disabled>MC</button>
-                    <button class="bold_digit" onclick="ElementValue(value)" value="memory_recall" id="recall"
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryRecall" id="recall"
                         disabled>MR</button>
-                    <button class="bold_digit" onclick="ElementValue(value)" value="memory_add">M+</button>
-                    <button class="bold_digit" onclick="ElementValue(value)" value="memory_sub">M-</button>
-                    <button class="bold_digit" onclick="ElementValue(value)" value="memory_store">MS</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryAdd">M+</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memorySubtract">M-</button>
+                    <button class="bold_digit" onclick="ElementValue(value)" value="memoryStore">MS</button>
 
                 </div>
             </div>
@@ -92,23 +92,23 @@
                                             onclick="changeDropdown('dropdown_display2','dropdown_display1')">2<sup>nd</sup></button>
                                     </li>
                                     <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                            value="sin_inverse">sin<sup>-1</sup></button></li>
+                                            value="sinInverse">sin<sup>-1</sup></button></li>
                                     <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
-                                            value="cos_inverse">cos<sup>-1</sup></button></li>
+                                            value="cosInverse">cos<sup>-1</sup></button></li>
                                     <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
-                                            value="tan_inverse">tan<sup>-1</sup></button></li>
+                                            value="tanInverse">tan<sup>-1</sup></button></li>
                                 </div>
 
                                 <div class="div_1 d-flex">
                                     <li><button class="dropdown-item">hyp</button>
                                     </li>
                                     <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
-                                            value="cosec_inverse">cosec<sup>-1</sup></button>
+                                            value="cosecInverse">cosec<sup>-1</sup></button>
                                     </li>
                                     <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                            value="sec_inverse">sec<sup>-1</sup></button></li>
+                                            value="secInverse">sec<sup>-1</sup></button></li>
                                     <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                            value="cot_inverse">cot<sup>-1</sup></button></li>
+                                            value="cotInverse">cot<sup>-1</sup></button></li>
                                 </div>
                             </div>
                             <div class="dropdown_display3">
@@ -146,11 +146,11 @@
                                             onclick="changeDropdown('dropdown_display3','dropdown_display4')">2<sup>nd</sup></button>
                                     </li>
                                     <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                            value="sinh_inverse">sinh<sup>-1</sup></button></li>
+                                            value="sinhInverse">sinh<sup>-1</sup></button></li>
                                     <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
-                                            value="cosh_inverse">cosh<sup>-1</sup></button></li>
+                                            value="coshInverse">cosh<sup>-1</sup></button></li>
                                     <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
-                                            value="tanh_inverse">tanh<sup>-1</sup></button></li>
+                                            value="tanhInverse">tanh<sup>-1</sup></button></li>
                                 </div>
 
                                 <div class="div_1 d-flex">
@@ -158,12 +158,12 @@
                                             onclick="changeDropdown('dropdown_display2','dropdown_display4')">hyp</button>
                                     </li>
                                     <li><button class="dropdown-item " type="button" onclick="ElementValue(value)"
-                                            value="cosech_inverse">cosech<sup>-1</sup></button>
+                                            value="cosechInverse">cosech<sup>-1</sup></button>
                                     </li>
                                     <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                            value="sech_inverse">sech<sup>-1</sup></button></li>
+                                            value="sechInverse">sech<sup>-1</sup></button></li>
                                     <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                            value="coth_inverse">coth<sup>-1</sup></button></li>
+                                            value="cothInverse">coth<sup>-1</sup></button></li>
                                 </div>
 
 
@@ -180,9 +180,9 @@
                                 <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
                                         value="modulus">|x|</button></li>
                                 <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                        value="floor_fun">&LeftFloor;x&RightFloor;</button></li>
+                                        value="floorFunction">&LeftFloor;x&RightFloor;</button></li>
                                 <li><button class="dropdown-item" type="button" onclick="ElementValue(value)"
-                                        value="ceiling_fun">&LeftCeiling;x&RightCeiling;</button>
+                                        value="ceilingFunction">&LeftCeiling;x&RightCeiling;</button>
                                 </li>
                             </div>
                             <div class="div_1 d-flex">
@@ -211,7 +211,7 @@
 
                             </button>
                             <button onclick="ElementValue(value)"
-                                value="x_inverse"><sup>1</sup>/<sub>x</sub></button>
+                                value="xInverse"><sup>1</sup>/<sub>x</sub></button>
                             <button onclick="ElementValue(value)" value="modulus">| x |</button>
                             <button onclick="ElementValue(value)" value="exp">exp</button>
                             <button onclick="ElementValue(value)" value="%">mod</button>
@@ -219,11 +219,11 @@
             </div>
             <div class="row">
                 <div class="calc_bottom ">
-                    <button class="display_1" onclick="ElementValue(value)" value="square_root">&#8730;x</button>
+                    <button class="display_1" onclick="ElementValue(value)" value="squareRoot">&#8730;x</button>
                     <button class="display_2" onclick="ElementValue(value)"
-                        value="cube_root"><sup>3</sup>&#8730;x</button>
-                    <button onclick="ElementValue(value)" value="open_bracket">(</button>
-                    <button onclick="ElementValue(value)" value="close_bracket">)</button>
+                        value="cubeRoot"><sup>3</sup>&#8730;x</button>
+                    <button onclick="ElementValue(value)" value="openBracket">(</button>
+                    <button onclick="ElementValue(value)" value="closeBracket">)</button>
                     <button onclick="ElementValue(value)" value="factorial">n!</button>
                     <button class="button" onclick="expressionValue(value)" value="/">&#247;</button>
                 </div>
@@ -242,7 +242,7 @@
                 <div class="calc_bottom ">
                     <button class="display_1" onclick="ElementValue(value)" value="power">10<sup>x</sup></button>
                     <button class="display_2" onclick="ElementValue(value)"
-                        value="power_2">2<sup>x</sup></sup></button>
+                        value="twoTothePowerValue">2<sup>x</sup></sup></button>
                     <button class="digits button" onclick="expressionValue(value)" value="4">4</button>
                     <button class="digits button" onclick="expressionValue(value)" value="5">5</button>
                     <button class="digits button" onclick="expressionValue(value)" value="6">6</button>
@@ -262,8 +262,8 @@
             <div class="row">
                 <div class="calc_bottom ">
                     <button class="display_1" onclick="ElementValue(value)" value="lnx">ln</button>
-                    <button class="display_2" onclick="ElementValue(value)" value="e_x">e<sup>x</sup></button>
-                    <button onclick="ElementValue(value)" value="sign_change"
+                    <button class="display_2" onclick="ElementValue(value)" value="ePowerx">e<sup>x</sup></button>
+                    <button onclick="ElementValue(value)" value="signChange"
 class="digits"><sup>+</sup>/<sub>-</sub></button>
                     <button class="digits" onclick="expressionValue(value)" value="0">0</button>
                     <button class="digits" onclick="expressionValue(value)" value=".">.</button>

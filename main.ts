@@ -1,34 +1,21 @@
-let a: number = 1;
-let b: number = 1;
-let c: number = 1;
-let d: number = 1;
-let e: number = 1;
-let x: number = 1;
-let y: number[];
-let z: number = 1;
-let w: number = 1;
-let i: number = 1;
-let m: number = 1;
-let n: number = 1;
-let o: number = 1;
-
-let memory_stack: any[] = [];
-
+let dropdownToggleValue: number = 1;
+let logbaseChange: number[];
+let ToggleValue: number = 1;
+let memoryStack: any[] = [];
 let input = document.querySelector<HTMLInputElement>('input')!;
 
-function inputElement(): void {
-    input.value = " ";
-}
 
+function inputElement(): void
+ { input.value = " "; } 
 
 function equalElement(): void {
     if (input.value.indexOf("yroot") !== -1) {
-        let y: string[] = yroot(input.value);
-        ythrroot(Number(y[0]), Number(y[1]));
+        let logbaseChange: string[] = yroot(input.value);
+        ythrroot(Number(logbaseChange[0]), Number(logbaseChange[1]));
     }
     if ((input.value.indexOf("logy") !== -1)) {
-        let y: string[] = logy(input.value);
-        logx_base_y(Number(y[0]), Number(y[1]));
+        let logbaseChange: string[] = logy(input.value);
+        logxBasey(Number(logbaseChange[0]), Number(logbaseChange[1]));
     }
     try {
         input.value = eval(input.value);
@@ -40,7 +27,7 @@ function equalElement(): void {
 
 
 
-function expressionValue(value: string) {
+function expressionValue(value: string):void {
     input.value += value;
 }
 
@@ -49,10 +36,10 @@ function expressionValue(value: string) {
 
 
 
-function yroot(value: string) {
-    let m = value.search("yroot");
-    let n = value.substring(0, m);
-    let o = value.substring(m + 5, value.length);
+function yroot(value: string):string[] {
+    let m:string|number = value.search("yroot");
+    let n:string|number = value.substring(0, m);
+    let o:string|number = value.substring(m + 5, value.length);
     return [o, n]
 }
 function ythrroot(val1: number, val2: number) {
@@ -63,13 +50,13 @@ function ythrroot(val1: number, val2: number) {
 
 
 
-function logy(value: string) {
-    let m = value.search("logy");
-    let n = value.substring(0, m);
-    let o = value.substring(m + 4, value.length);
+function logy(value: string): string[] {
+    let m:string|number = value.search("logy");
+    let n:string|number = value.substring(0, m);
+    let o:string|number = value.substring(m + 4, value.length);
     return [o, n]
 }
-function logx_base_y(num1: number, num2: number) {
+function logxBasey(num1: number, num2: number):void {
     input.value = (Math.log(num1) / Math.log(num2)).toString();
 }
 
@@ -77,29 +64,29 @@ function logx_base_y(num1: number, num2: number) {
 
 
 
-function cr(): void {
+function ToggleClearandRecall(): void {
     (document.getElementById('clear') as HTMLButtonElement).disabled = false;
     (document.getElementById('recall') as HTMLButtonElement).disabled = false;
 }
 
 function changeDropdown(val1: string, val2: string): void {
-    if (d == 1) {
-        for (let x of <any>document.getElementsByClassName(val1)) {
-            x.style.display = "inline-block";
+    if (dropdownToggleValue == 1) {
+        for (let displayToggle of <any>document.getElementsByClassName(val1)) {
+            displayToggle.style.display = "inline-block";
         }
 
-        for (let x of <any>document.getElementsByClassName(val2)) {
-            x.style.display = "none";
+        for (let displayToggle of <any>document.getElementsByClassName(val2)) {
+            displayToggle.style.display = "none";
         }
-        d = 0;
+        dropdownToggleValue = 0;
     } else {
-        for (let x of <any>document.getElementsByClassName(val2)) {
-            x.style.display = "inline-block";
+        for (let displayToggle of <any>document.getElementsByClassName(val2)) {
+            displayToggle.style.display = "inline-block";
         }
-        for (let x of <any>document.getElementsByClassName(val1)) {
-            x.style.display = "none";
+        for (let displayToggle of <any>document.getElementsByClassName(val1)) {
+            displayToggle.style.display = "none";
         }
-        d = 1;
+        dropdownToggleValue = 1;
     }
 }
 
@@ -111,10 +98,6 @@ function changeDropdown(val1: string, val2: string): void {
 function ElementValue(value: string) {
 
     switch (value) {
-        case 'C': {
-            input.value = "";
-            break;
-        }
 
         case 'x^2': {
             input.value = Math.pow(Number(input.value), 2).toString();
@@ -125,11 +108,11 @@ function ElementValue(value: string) {
             input.value = Math.pow(Number(input.value), 3).toString();
             break;
         }
-        case 'square_root': {
+        case 'squareRoot': {
             input.value = Math.sqrt(Number(input.value)).toString();
             break;
         }
-        case 'cube_root': {
+        case 'cubeRoot': {
 
             input.value = Math.pow(Number(input.value), 0.3334).toFixed(1);
             break;
@@ -164,22 +147,22 @@ function ElementValue(value: string) {
             break;
         }
 
-        case 'power_2': {
+        case 'twoTothePowerValue': {
             input.value = Math.pow(2, Number(input.value)).toString();
             break;
         }
 
-        case 'e_x': {
+        case 'ePowerx': {
             input.value = Math.exp(Number(input.value)).toString();
             break;
         }
 
-        case 'floor_fun': {
+        case 'floorFunction': {
             input.value = Math.floor(Number(input.value)).toString();
             break;
         }
 
-        case 'ceiling_fun': {
+        case 'ceilingFunction': {
             input.value = Math.ceil(Number(input.value)).toString();
             break;
         }
@@ -199,12 +182,12 @@ function ElementValue(value: string) {
         }
 
 
-        case 'open_bracket': {
+        case 'openBracket': {
             input.value += "(";
             break;
         }
 
-        case 'close_bracket': {
+        case 'closeBracket': {
             input.value += ")";
             break;
         }
@@ -226,66 +209,65 @@ function ElementValue(value: string) {
             input.value = Math.random().toString();
             break;
         }
-        case 'sign_change': {
+        case 'signChange': {
 
             input.value = ((-1) * (Number(input.value))).toString();
             break;
         }
 
-        case 'memory_clear': {
-            memory_stack = [];
+        case 'memoryClear': {
+            memoryStack = [];
 
 
             break;
         }
 
-        case 'memory_recall': {
+        case 'memoryRecall': {
 
 
-            input.value = memory_stack[memory_stack.length - 1].toString();
+            input.value = memoryStack[memoryStack.length - 1].toString();
             break;
         }
 
 
 
-        case 'memory_add': {
+        case 'memoryAdd': {
 
-            cr()
-            if (memory_stack.length == 1) {
-                memory_stack.push(parseInt(input.value));
+            ToggleClearandRecall()
+            if (memoryStack.length == 1) {
+                memoryStack.push(parseInt(input.value));
             }
 
             else {
 
-                memory_stack[memory_stack.length - 1] += parseInt(input.value);
+                memoryStack[memoryStack.length - 1] += parseInt(input.value);
             }
             break;
         }
 
 
-        case 'memory_sub': {
+        case 'memorySubtract': {
 
-            cr()
-            if (memory_stack.length == 0) {
-                memory_stack.push((-1) * parseInt(input.value));
+            ToggleClearandRecall()
+            if (memoryStack.length == 0) {
+                memoryStack.push((-1) * parseInt(input.value));
             }
             else {
-                memory_stack[memory_stack.length - 1] -= parseInt(input.value);
+                memoryStack[memoryStack.length - 1] -= parseInt(input.value);
             }
             break;
         }
 
 
-        case 'memory_store': {
+        case 'memoryStore': {
 
-            cr()
-            if (memory_stack.length == 0) {
-                memory_stack.push(parseFloat(input.value));
+            ToggleClearandRecall()
+            if (memoryStack.length == 0) {
+                memoryStack.push(parseFloat(input.value));
             }
 
             else {
-                console.log("add")
-                memory_stack.push(parseFloat(input.value));
+                memoryStack.push(parseFloat(input.value));
             }
             break;
         }
@@ -316,7 +298,7 @@ function ElementValue(value: string) {
             break;
         }
 
-        case 'x_inverse': {
+        case 'xInverse': {
             input.value = (1 / (Number(input.value))).toString();
 
             break;
@@ -334,26 +316,26 @@ function ElementValue(value: string) {
         }
 
         case 'deg': {
-            if (i == 1) {
+            if (ToggleValue == 1) {
                 document.querySelector<HTMLButtonElement>('degree')!.innerHTML = "RAD";
-                i = 0;
+                ToggleValue = 0;
             }
             else {
                 document.querySelector<HTMLButtonElement>('degree')!.innerHTML = "DEG";
-                i = 1;
+                ToggleValue = 1;
             }
             break;
         }
 
 
         case 'fe': {
-            if (w == 1) {
+            if (ToggleValue == 1) {
                 input.value = Number(input.value).toString();
-                w = 0;
+                ToggleValue = 0;
             }
             else {
                 input.value = Number(input.value).toExponential().toString();
-                w = 1;
+                ToggleValue = 1;
             }
             break;
         }
@@ -365,7 +347,7 @@ function ElementValue(value: string) {
 
 
         case 'sin': {
-            if (i == 1) {
+            if (ToggleValue == 1) {
                 input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
             }
             else {
@@ -374,7 +356,7 @@ function ElementValue(value: string) {
 
             break;
         } case 'cos': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
             }
             else {
@@ -383,7 +365,7 @@ function ElementValue(value: string) {
 
             break;
         } case 'tan': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (Math.sin((Math.PI / 180) * Number(input.value))).toString();
             }
             else {
@@ -392,7 +374,7 @@ function ElementValue(value: string) {
 
             break;
         } case 'cosec': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (1 / Math.sin(Math.PI / 180 * Number(input.value))).toString();
             }
             else {
@@ -401,7 +383,7 @@ function ElementValue(value: string) {
 
             break;
         } case 'sec': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (1 / Math.cos(Math.PI / 180 * Number(input.value))).toString();
             }
             else {
@@ -410,7 +392,7 @@ function ElementValue(value: string) {
 
             break;
         } case 'cot': {
-            if (i) {
+            if (ToggleValue) {
                 input.value = (1 / (Math.tan(Math.PI / 180 * Number(input.value)))).toString();
             }
             else {
@@ -423,8 +405,8 @@ function ElementValue(value: string) {
 
 
 
-        case 'sin_inverse': {
-            if (i) {
+        case 'sinInverse': {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.asin(Number(input.value))).toString();
             }
             else {
@@ -432,8 +414,8 @@ function ElementValue(value: string) {
             }
 
             break;
-        } case 'cos _inverse': {
-            if (i) {
+        } case 'cosInverse': {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.acos(Number(input.value))).toString();
             }
             else {
@@ -441,8 +423,8 @@ function ElementValue(value: string) {
             }
 
             break;
-        } case 'tan_inverse': {
-            if (i) {
+        } case 'tanInverse': {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * Math.atan(Number(input.value))).toString();
             }
             else {
@@ -450,8 +432,8 @@ function ElementValue(value: string) {
             }
 
             break;
-        } case 'cosec_inverse': {
-            if (i) {
+        } case 'cosecInverse': {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.asin(1 / Number(input.value)))).toString();
             }
             else {
@@ -459,8 +441,8 @@ function ElementValue(value: string) {
             }
 
             break;
-        } case 'sec_inverse': {
-            if (i) {
+        } case 'secInverse': {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.acos(1 / Number(input.value)))).toString();
             }
             else {
@@ -468,8 +450,8 @@ function ElementValue(value: string) {
             }
 
             break;
-        } case 'cot_inverse': {
-            if (i) {
+        } case 'cotInverse': {
+            if (ToggleValue) {
                 input.value = (180 / Math.PI * (Math.atan(1 / Number(input.value)))).toString();
             }
             else {
@@ -520,31 +502,31 @@ function ElementValue(value: string) {
 
 
 
-        case 'sinh_inverse': {
+        case 'sinhInverse': {
             let result = (Math.log(Number(input.value) + Math.sqrt(Math.pow(Number(input.value), 2) + 1))).toString();
             input.value = result;
 
             break;
-        } case 'cosh_inverse': {
+        } case 'coshInverse': {
             let result = (Math.log(Number(input.value) + Math.sqrt(Math.pow(Number(input.value), 2) - 1))).toString();
             input.value = result;
 
             break;
-        } case 'tanh_inverse': {
+        } case 'tanhInverse': {
             let result = (0.5 * Math.log((1 + Number(input.value)) / (1 - Number(input.value)))).toString();
             input.value = result;
 
             break;
-        } case 'cosech_inverse': {
+        } case 'cosechInverse': {
             let result = (Math.log(1 / Number(input.value) + Math.sqrt(1 / Math.pow(Number(input.value), 2) + 1))).toString();
             input.value = result;
 
             break;
-        } case 'sech_inverse': {
+        } case 'sechInverse': {
             let result = (Math.log(1 / Number(input.value) + Math.sqrt(1 / Math.pow(Number(input.value), 2) - 1))).toString();
             input.value = result;
             break;
-        } case 'coth_inverse': {
+        } case 'cothInverse': {
             let result = (0.5 * Math.log((Number(input.value )+ 1) / (Number(input.value) - 1))).toString();
             input.value = result;
 
